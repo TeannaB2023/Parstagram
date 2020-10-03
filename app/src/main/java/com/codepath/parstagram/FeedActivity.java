@@ -62,10 +62,7 @@ public class FeedActivity extends AppCompatActivity {
                     Log.e(TAG, "Issue with getting post", e);
                     return;
                 }
-                for (Post post : posts) {
-                    Log.i(TAG, "Post: " + post.getKeyDescription() + ", username: " + post.getKeyUser().getUsername());
-                    // TODO: RV feed with all the saved posts
-                }
+
                 // Only displaying the more recent post
                 ParseFile picObject = posts.get(posts.size() - 1).getKeyImage();
                 picObject.getDataInBackground(new GetDataCallback() {
@@ -85,6 +82,12 @@ public class FeedActivity extends AppCompatActivity {
 
                 tvUsername.setText(posts.get(posts.size() - 1).getKeyUser().getUsername());
                 tvCaption.setText(posts.get(posts.size() - 1).getKeyDescription());
+
+                /**for (Post post : posts) {
+                    Log.i(TAG, "Post: " + post.getKeyDescription() + ", username: " + post.getKeyUser().getUsername());
+                    // TODO: RV feed with all the saved posts
+                }*/
+
             }
         });
     }
