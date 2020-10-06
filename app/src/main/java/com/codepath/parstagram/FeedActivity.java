@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,7 +64,7 @@ public class FeedActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Only displaying the more recent post
+                // Only displaying the most recent post
                 ParseFile picObject = posts.get(posts.size() - 1).getKeyImage();
                 picObject.getDataInBackground(new GetDataCallback() {
                     @Override
@@ -75,13 +76,13 @@ public class FeedActivity extends AppCompatActivity {
                                             data.length);
                             ivPicture.setImageBitmap(pic);
                         } else {
-                            Log.e(TAG, "Image didn't load");
+                            Log.e(TAG, "Image didn't load", e);
                         }
                     }
                 });
 
-                tvUsername.setText(posts.get(posts.size() - 1).getKeyUser().getUsername());
-                tvCaption.setText(posts.get(posts.size() - 1).getKeyDescription());
+                tvUsername.setText(posts.get(posts.size()-1).getKeyUser().getUsername());
+                tvCaption.setText(posts.get(posts.size()-1).getKeyDescription());
 
                 /**for (Post post : posts) {
                     Log.i(TAG, "Post: " + post.getKeyDescription() + ", username: " + post.getKeyUser().getUsername());
