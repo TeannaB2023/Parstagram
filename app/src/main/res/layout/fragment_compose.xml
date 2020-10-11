@@ -7,6 +7,26 @@
     android:orientation="vertical"
     tools:context=".Fragments.ComposeFragment">
 
+    <Button
+        android:id="@+id/btnPicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="#FFFAE3"
+        android:text="TAKE PICTURE"
+        android:textColor="#8F745C" />
+
+    <ImageView
+        android:id="@+id/ivPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
     <EditText
         android:id="@+id/etCaption"
         android:layout_width="match_parent"
@@ -20,22 +40,6 @@
         android:inputType="textMultiLine"
         android:maxLines="5"
         android:minLines="1" />
-
-    <Button
-        android:id="@+id/btnPicture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:backgroundTint="#FFFAE3"
-        android:text="TAKE PICTURE"
-        android:textColor="#8F745C" />
-
-    <ImageView
-        android:id="@+id/ivPhoto"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <Button
         android:id="@+id/btnPost"
